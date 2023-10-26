@@ -13,6 +13,17 @@ return new class extends Migration
     {
         Schema::create('re_issues', function (Blueprint $table) {
             $table->id();
+            $table->string('pnr');
+            $table->string('airline');
+            $table->string('total_fare');
+            $table->string('airline_pnr');
+            $table->string('pax_name');
+            $table->string('sector');
+            $table->string('agency_email');
+            $table->string('admin_email');
+            $table->text('remarks')->nullable();
+            $table->boolean('no_show');
+            $table->boolean('purged_pnr');
             $table->timestamps();
         });
     }

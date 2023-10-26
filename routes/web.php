@@ -2,45 +2,46 @@
 
 use App\Livewire\SubAgent\Home;
 use App\Livewire\SubAgent\Profile;
+use App\Livewire\SuperAdmin\Queues;
 use App\Livewire\SubAgent\QuoteList;
 use App\Livewire\SubAgent\Statements;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\SuperAdmin\AdminHome;
 use App\Livewire\SuperAdmin\MarkUpFee;
+use App\Livewire\SuperAdmin\ModifyPNR;
+use App\Livewire\SuperAdmin\TdsMaster;
 use App\Livewire\Auth\UserVerification;
 use App\Livewire\SubAgent\FlightSearch;
 use App\Livewire\SubAgent\TopupRequest;
 use App\Livewire\SubAgent\Transactions;
 use App\Livewire\SuperAdmin\ManageUser;
+use App\Livewire\SuperAdmin\ServiceTax;
 use App\Livewire\SubAgent\InsuranceList;
+use App\Livewire\SuperAdmin\ClassMaster;
 use App\Livewire\SuperAdmin\ManageAdmin;
 use App\Livewire\SuperAdmin\ManageTopUp;
 use App\Http\Controllers\AdminController;
+use App\Livewire\SubAgent\ReissueReqvest;
 use App\Livewire\SuperAdmin\AdminProfile;
 use App\Livewire\SuperAdmin\AgencyStatus;
 use App\Livewire\SuperAdmin\AgentIncentive;
+use App\Livewire\SuperAdmin\DealCodeMaster;
+use App\Livewire\SuperAdmin\GoodServiceTax;
 use App\Livewire\SuperAdmin\ManageSubAgent;
+use App\Livewire\SuperAdmin\OfflinePayment;
 use App\Livewire\SuperAdmin\OfflineReqVoid;
+use App\Livewire\SuperAdmin\TransactionFee;
+use App\Livewire\SuperAdmin\CustomRuleCheck;
 use App\Livewire\SuperAdmin\DiscountDetails;
 use App\Http\Controllers\Auth\AuthController;
 use App\Livewire\SuperAdmin\ManagePermission;
 use App\Livewire\SubAgent\GetQuoteOrInsurance;
 use App\Livewire\SubAgent\TransactionOverview;
-use App\Livewire\SuperAdmin\OfflineReqPayment;
-use App\Http\Controllers\Auth\UserVerificationController;
 use App\Livewire\SuperAdmin\AirlineCommission;
 use App\Livewire\SuperAdmin\AirlinePreference;
-use App\Livewire\SuperAdmin\ClassMaster;
-use App\Livewire\SuperAdmin\CustomRuleCheck;
-use App\Livewire\SuperAdmin\DealCodeMaster;
-use App\Livewire\SuperAdmin\GoodServiceTax;
-use App\Livewire\SuperAdmin\ModifyPNR;
-use App\Livewire\SuperAdmin\OfflinePayment;
+use App\Livewire\SuperAdmin\OfflineReqPayment;
 use App\Livewire\SuperAdmin\PrivateFareAccountCode;
-use App\Livewire\SuperAdmin\Queues;
-use App\Livewire\SuperAdmin\ServiceTax;
-use App\Livewire\SuperAdmin\TdsMaster;
-use App\Livewire\SuperAdmin\TransactionFee;
+use App\Http\Controllers\Auth\UserVerificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -156,6 +157,9 @@ Route::middleware([
         Route::get('/transaction-overview', TransactionOverview::class)->name('transactionOverview');
         Route::get('/topup-request', TopupRequest::class)->name('topupRequests');
         Route::get('/profile', Profile::class)->name('profile');
+        
+        //offline request
+        Route::get('/reissue', ReissueReqvest::class)->name('reissue');
     });
 
     Route::group([

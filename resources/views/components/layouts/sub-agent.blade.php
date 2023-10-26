@@ -799,6 +799,14 @@
 
                         </ul>
                     </li>
+                    <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
+                            <i class="bi bi-card-text"></i>
+                            <span class="nav-text">offline Request</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('sub-agent.reissue') }}">Re-Issue Reqvest</a></li>
+                        </ul>
+                    </li>
 
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
                             <i class="bi bi-search"></i>
