@@ -16,8 +16,8 @@ This project for external developments for flynow freshers team
 - git clone [repo link]
 - composer install
 - npm install
-- php artisan key:generate
 - rename your .env.example to .env
+-  php artisan key:generate
 - create a database with .env db name
 - php artisan migrate
 
