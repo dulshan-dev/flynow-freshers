@@ -30,7 +30,7 @@ class CreateNewUser implements CreatesNewUsers
         //generate user name
         $userName = 'FN-'.$input['surname'].'-'.uniqid();
 
-        dd($userName);
+        // dd($userName);
 
         $validate = Validator::make($input, [
             'first_name' => ['required', 'string', 'max:255'],
