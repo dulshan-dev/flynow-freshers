@@ -21,4 +21,10 @@ This project for external developments for flynow freshers team
 - create a database with .env db name
 - php artisan migrate
 
+- ### Branch Instrauction
+- please try to put commits step by steps to get understand to other developers easily.
+
+- create your own branch for your tasks 
+- git branch -C yourname-task (dilshan-reissue)
+
 
