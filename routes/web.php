@@ -156,6 +156,9 @@ Route::middleware([
         Route::get('/transaction-overview', TransactionOverview::class)->name('transactionOverview');
         Route::get('/topup-request', TopupRequest::class)->name('topupRequests');
         Route::get('/profile', Profile::class)->name('profile');
+
+        //newly assigned payment  route
+        Route::get('/payment', SubPayments::class)->name('Payments');
     });
 
     Route::group([
