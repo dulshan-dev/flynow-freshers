@@ -862,6 +862,19 @@
                         </a>
                     </li>
 
+                    <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
+                        <i class="bi bi-wifi-off"></i>
+                          <span class="nav-text">Offline Requests</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('sub-agent.Payments') }}">Payment</a></li>
+                            <li><a href="">Cancel</a></li>
+                            <li><a href="">Refund</a></li>
+                            <li><a href="">Issue</a></li>          
+                            <li><a href="">Void</a></li>
+                        </ul>
+                    </li>
+
                 </ul>
 
                 <!-- <div class="copyright">
