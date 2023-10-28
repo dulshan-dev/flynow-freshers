@@ -1,10 +1,34 @@
+{{-- <div>
+    <div class="content-body">
+        <div class="container-fluid">
+            <div class="row page-titles">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Offine Request</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0)"></a>REFUND REQUEST FORM</li>
+                </ol>
+            </div>
+            <div class="alert alert-primary" role="alert">
+                Note: Booking TransactionId is used as Ref. Number to fetch PNR Deatils.
+            </div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">OFFLINE REFUND REQUEST FORM</h4>
+                    </div>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+</div> --}}
+
 <div>
     <div class="content-body">
         <div class="container-fluid">
             <div class="row page-titles">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item active"><a href="javascript:void(0)">Offline Request</a></li>
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">REISSUE REQUEST FORM</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">REFUND REQUEST FORM</a></li>
                 </ol>
             </div>
             <div class="alert alert-primary" role="alert">
@@ -13,7 +37,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">OFFLINE REISSUE REQUEST FORM</h4>
+                        <h4 class="card-title">OFFLINE REFUND REQUEST FORM</h4>
                     </div>
                     <div class="container">
                         @if (session()->has('message'))
@@ -45,11 +69,6 @@
                                     <div class="mb-3">
                                         <label for="exampleFormControlTextarea1" class="form-label">Remarks</label>
                                         <textarea wire:model="remarks" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                    </div>
-    
-                                    <div class="mb-3 form-check">
-                                        <input type="checkbox" wire:model="purgedPnr" class="form-check-input" id="customCheckBox8">
-                                        <label class="form-check-label" for="customCheckBox8">Purged PNR</label>
                                     </div>
                                 </div>
     
@@ -115,6 +134,10 @@
         </div>
     </div>
 </div>
+
+
+
+
 
 
 

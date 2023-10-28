@@ -1,23 +1,21 @@
 <?php
 
 namespace App\Livewire\SubAgent;
-
 use App\Models\ReIssue;
 use Livewire\Component;
+
+use App\Models\RefundRequest;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Layout;
-use App\Livewire\SubAgent\ReissueReqvest;
 
 #[Layout('components.layouts.sub-agent')]
-#[Title('Reissue Reqvest')]
-
-class ReissueReqvest extends Component
+#[Title('Refund Reqvest')]
+class RefundReqvest extends Component
 {
     public $refNumber;
     public $sector;
     public $adminEmailId;
     public $remarks;
-    public $purgedPnr;
     public $airlinePnr;
     public $totalFare;
     public $agencyEmailId;
@@ -26,10 +24,9 @@ class ReissueReqvest extends Component
     public $travelDate;
     public $airline;
     public $noShow;
-
     public function render()
     {
-        return view('livewire.sub-agent.reissue-reqvest');
+        return view('livewire.sub-agent.refund-reqvest');
     }
 
     public function submitForm()
@@ -41,7 +38,7 @@ class ReissueReqvest extends Component
         ]);
 
 
-        ReIssue::create([
+        RefundRequest::create([
             'pnr' => $this->pnr,
             'airline' => $this->airline,
             'total_fare' => $this->totalFare,
@@ -52,7 +49,6 @@ class ReissueReqvest extends Component
             'admin_email' => $this->adminEmailId,
             'remarks' => $this->remarks,
             'no_show' => $this->noShow,
-            'purged_pnr' => $this->purgedPnr,
         ]);
 
 

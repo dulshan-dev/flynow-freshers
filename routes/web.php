@@ -17,6 +17,7 @@ use App\Livewire\SubAgent\Transactions;
 use App\Livewire\SuperAdmin\ManageUser;
 use App\Livewire\SuperAdmin\ServiceTax;
 use App\Livewire\SubAgent\InsuranceList;
+use App\Livewire\SubAgent\RefundReqvest;
 use App\Livewire\SuperAdmin\ClassMaster;
 use App\Livewire\SuperAdmin\ManageAdmin;
 use App\Livewire\SuperAdmin\ManageTopUp;
@@ -160,6 +161,8 @@ Route::middleware([
         
         //offline request
         Route::get('/reissue', ReissueReqvest::class)->name('reissue');
+        Route::get('/refund', RefundReqvest::class)->name('refund');
+
     });
 
     Route::group([
