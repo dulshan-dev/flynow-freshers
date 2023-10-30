@@ -82,6 +82,24 @@
                 </div>
             </div>
 
+                <!--Wallet Balance-->
+                <div class="col-xl-3 col-sm-12">
+                    <div class="widget-stat card">
+                        <div class="card-body p-4">
+                            <div class="media ai-icon">
+                                <span class="me-3 bgl-warning text-success">
+                                    <i class="bi bi-wallet2"></i>
+                                </span>
+                                <div class="media-body">
+                                    <p class="mb-1">Wallet Balance</p>
+                                    <h4 class="mb-0">LKR {{ $agentWallet->credit_limit ?? 'N/A' }}</h4>
+                                    <!-- <span class="badge badge-success">-3.5%</span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             <!-- --------------------------------------Dashboard Table------------------------------------- -->
             <div class="row">
                 <div class="col-lg-12">
