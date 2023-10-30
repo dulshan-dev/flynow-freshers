@@ -1,3 +1,8 @@
+@php
+use App\Models\AgentWallet;
+$agentWallet = AgentWallet::where('user_id', auth()->user()->id)->first();
+@endphp
+
 <div>
     <div class="content-body">
         <!-- row -->
