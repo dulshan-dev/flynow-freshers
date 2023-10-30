@@ -9,7 +9,7 @@ class AgentWallet extends Model
 {
     use HasFactory;
 
-    protected $table = 'agent_wallet'; // Specify the table name if it's different from the model's name.
+    protected $table = 'agent_wallet'; 
     protected $fillable = [
         'type',
         'update_reason',
