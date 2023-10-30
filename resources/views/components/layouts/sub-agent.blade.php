@@ -27,7 +27,12 @@
     <!-- Style css -->
     @vite('resources/js/app.js')
     @livewireStyles
-
+    <!--PHP for handling the wallet-->
+    @php
+    use App\Models\AgentWallet;
+    $agentWallet = AgentWallet::where('user_id', auth()->user()->id)->first();
+    @endphp
+    
 </head>
 
 <body>
@@ -646,6 +651,15 @@
                                                 class="flaticon-381-search-2"></i></a></span>
                                 </div>
                             </li> -->
+                            <!--Wallet Balance-->                        
+                            <li class="nav-item">
+                                <div class="input-group px-3">
+                                    <label  for="wallet" style="text-align: center;">
+                                        <span class="px-3"> <i class="fa fa-wallet"></i> </span>
+                                        Wallet Balance : LKR {{ $agentWallet->credit_limit ?? 'N/A' }}
+                                    </label>
+                                </div>
+                            </li>
 
                             <li class="nav-item dropdown notification_dropdown">
                                 <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
