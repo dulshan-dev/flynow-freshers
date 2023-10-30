@@ -39,9 +39,9 @@
                                     </thead>
                                     <tbody>
                                     
-                                        @foreach ($data as $item)
+                                        @foreach ($data as $index=> $item)
                                         <tr>
-                                            <td><strong>{{$item->id}}</strong></td>
+                                            <td><strong>{{ $index + 1 }}</strong></td>
                                             <td>{{ $item->pnr }}</td>
                                             <td>{{ $item->airline }}</td>
                                             <td>RS {{ $item->total_fare }}/=</td>
