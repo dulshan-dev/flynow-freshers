@@ -837,12 +837,13 @@
                             <span class="nav-text">Top Up</span>
                         </a>
                     </li>
-
-                    <li><a href="javascript:void()" aria-expanded="false">
-                            <i class="bi bi-cash"></i>
-                            <span class="nav-text">ADM</span>
+             
+                   <li> <a href="{{ route('sub-agent.a-d-m') }}" aria-expanded="false">
+                        <i class="bi bi-credit-card-2-front"></i>
+                        <span class="nav-text">ADM</span>
                         </a>
                     </li>
+                    
 
                     <li><a href="javascript:void()" aria-expanded="false">
                             <i class="bi bi-credit-card"></i>

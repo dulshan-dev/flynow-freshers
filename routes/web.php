@@ -1,6 +1,8 @@
 <?php
 
+
 use App\Livewire\SubAgent\Home;
+use App\Livewire\SubAgent\ADM;
 use App\Livewire\SubAgent\Profile;
 use App\Livewire\SubAgent\QuoteList;
 use App\Livewire\SubAgent\Statements;
@@ -41,6 +43,10 @@ use App\Livewire\SuperAdmin\Queues;
 use App\Livewire\SuperAdmin\ServiceTax;
 use App\Livewire\SuperAdmin\TdsMaster;
 use App\Livewire\SuperAdmin\TransactionFee;
+use App\Livewire\SuperAdmin\UploadPackages;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -118,6 +124,10 @@ Route::middleware([
 
     //Queues
     Route::get('/queues', Queues::class)->name('manage.queues');
+
+    //UploadPackges
+    Route::get('/upload-packages', UploadPackages::class)->name('upload-packages');
+
 });
 
 /*
@@ -156,6 +166,9 @@ Route::middleware([
         Route::get('/transaction-overview', TransactionOverview::class)->name('transactionOverview');
         Route::get('/topup-request', TopupRequest::class)->name('topupRequests');
         Route::get('/profile', Profile::class)->name('profile');
+        Route::get('/a-d-m', ADM::class)->name('a-d-m');
+
+
     });
 
     Route::group([

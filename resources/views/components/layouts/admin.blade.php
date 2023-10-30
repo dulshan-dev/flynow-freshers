@@ -830,6 +830,11 @@
                             <i class="bi bi-box-seam"></i>
                             <span class="nav-text">Packages</span>
                         </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('upload-packages') }}">Uploard Packages</a></li>
+                           
+                        </ul>
+  
                     </li>
 
                     <li><a href="{{ route('manage.queues') }}" aria-expanded="false">
