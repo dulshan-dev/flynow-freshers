@@ -821,6 +821,7 @@
                             <li><a href="">Cancel</a></li>
                             <li><a href="">Refund</a></li>
                             <li><a href="">Issue</a></li>
+                            <li><a href="{{ route('re-isssue') }}">Re - Issue</a></li>
                             <li><a href="">Payment</a></li>
                             <li><a href="">Void</a></li>
                         </ul>

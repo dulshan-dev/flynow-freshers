@@ -42,6 +42,7 @@ use App\Livewire\SuperAdmin\AirlinePreference;
 use App\Livewire\SuperAdmin\OfflineReqPayment;
 use App\Livewire\SuperAdmin\PrivateFareAccountCode;
 use App\Http\Controllers\Auth\UserVerificationController;
+use App\Livewire\SuperAdmin\ReIsssue;
 
 /*
 |--------------------------------------------------------------------------
@@ -99,6 +100,7 @@ Route::middleware([
     //offline requests
     Route::get('admin/offline-requests/payment', OfflineReqPayment::class)->name('offline.payment')->middleware('auth:admin');
     Route::get('admin/offline-requests/void', OfflineReqVoid::class)->name('offline.void')->middleware('auth:admin');
+    Route::get('admin/offline-requests/re-isssue', ReIsssue::class)->name('re-isssue')->middleware('auth:admin');
 
     //Manage agency new
     Route::get('/airline-commission', AirlineCommission::class)->name('manage.airline-commission');
