@@ -7,59 +7,38 @@
                     <li class="breadcrumb-item"><a href="javascript:void(0)"></a>Payment</li>
                 </ol>
             </div>
-            <div class="alert alert-primary" role="alert">
-                Note: Booking TransactionId is used as Ref. Number to fetch PNR Deatils.
-            </div>
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">OFFLINE PAYMENT FORM</h4>
-                    </div>
-                    <div class="row container">
-                        <div class="col">
-                            <div>
-                                <label for="inputEmail4" class="form-label">Reference No</label>
-                                <input type="text" class="form-control" placeholder="" aria-label="" required>
-                            </div>
-                            <br>
-                            <div>
-                                <label for="inputEmail4" class="form-label">Agency Email Id</label>
-                                <input type="text" class="form-control" placeholder="" aria-label="" required>
-                            </div>
-                            <br>
-                            <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">Reamrks</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                            </div>
-                        </div>
 
-                        <div class="col">
-                            <div>
-                                <label for="inputEmail4" class="form-label">Credit Amount</label>
-                                <input type="text" class="form-control" placeholder="" aria-label="" required>
+            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table id="example5" class="display" style="min-width: 845px">
+                                        <thead>
+                                            <tr>
+                                                <th>Reference Number</th>
+                                                <th>Ammount</th>
+                                                <th>Agency E-mail</th>
+                                                <th>Admin E-mail</th>
+                                                <th>Remarks</th>
+                                                <th>Image</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($payments as $payment)
+                                                <tr>
+                                                    <td>{{ $payment->ref_no }}</td>
+                                                    <td>{{ $payment->amount }}</td>
+                                                    <td>{{ $payment->agency_email }}</td>
+                                                    <td>{{ $payment->admin_email }}</td>
+                                                    <td>{{ $payment->remarks }}</td>
+                                                    <td>
+                                                    @if($payment->document)
+                                                        <img src="{{ asset('storage/payment_images/' . $payment->document) }}" alt="Payment Image" width="50px">
+                                                    @endif
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                            <br>
-                            <div>
-                                <label for="inputEmail4" class="form-label">Admin Email Id</label>
-                                <input type="text" class="form-control" placeholder="" aria-label="" required>
-                            </div>
-                            <br>
-                            
-                            <div>
-                                <label for="inputEmail4" class="form-label">Upload Document</label>
-                                <input type="file" name="nic_proof_back" accept="image/png, image/jpeg" class="form-file-input form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="col-12">
-                        <div class="d-grid d-md-flex justify-content-md-end">
-                            <button type="button" class="btn btn-primary m-5">Send Request</button>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
