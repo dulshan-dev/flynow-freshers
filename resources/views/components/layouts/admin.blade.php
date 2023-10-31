@@ -821,7 +821,7 @@
                             <li><a href="">Cancel</a></li>
                             <li><a href="">Refund</a></li>
                             <li><a href="">Issue</a></li>
-                            <li><a href="">Payment</a></li>
+                            <li><a href="{{ route('offline.req.payment') }}">Payment</a></li>
                             <li><a href="">Void</a></li>
                         </ul>
                     </li>
