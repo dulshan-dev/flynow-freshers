@@ -96,7 +96,7 @@ Route::middleware([
     Route::get('/markup-fee', MarkUpFee::class)->name('mark.up.fee')->middleware('auth:admin');
 
     //offline requests
-    Route::get('admin/offline-requests/payment', OfflineReqPayment::class)->name('offline.payment')->middleware('auth:admin');
+    Route::get('admin/offline-requests/payment', OfflineReqPayment::class)->name('offline.req.payment')->middleware('auth:admin');
     Route::get('admin/offline-requests/void', OfflineReqVoid::class)->name('offline.void')->middleware('auth:admin');
 
     //Manage agency new
