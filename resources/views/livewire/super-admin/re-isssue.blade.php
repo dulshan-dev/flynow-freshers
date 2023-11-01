@@ -35,10 +35,12 @@
                                             <th><Strong>Remarks</Strong></th>
                                             <th><strong>No Show</strong></th>
                                             <th><strong>Purged PNR</strong></th>
+                                            <th><strong>Status</strong></th>
+                                            <th colspan="2"><strong><div class="text-center">Actions</div></strong></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    
+
                                         @foreach ($data as $index=> $item)
                                         <tr>
                                             <td><strong>{{ $index + 1 }}</strong></td>
@@ -51,6 +53,7 @@
                                             <td>{{ $item->agency_email }}</td>
                                             <td>{{ $item->admin_email }}</td>
                                             <td>{{ $item->remarks }}</td>
+
                                             @if ($item->no_show == 1)
 
                                             <td><span class="badge badge-success">Yes</span></td>
@@ -67,8 +70,28 @@
 
                                             @elseif ($item ->purged_pnr == 0)
 
-                                            <td><span class="badge badge-danger">Flase</span></td>
+                                            <td><span class="badge badge-danger">False</span></td>
                                             @endif
+
+                                            @if ($item->status == "checking" || $item->status == "Checking")
+                                            <td><span class="badge badge-warning mb-2">Checking</span></td>
+
+                                            @elseif ($item->status == "approved" || $item->status == "Approved")
+                                            <td><span class="badge badge-success  mb-2">Approved</span></td>
+
+                                            @elseif ($item->status == "rejected" || $item->status == "rejected")
+                                            <td><span class="badge badge-danger mb-2">Cancelled</span></td>
+
+                                            @endif
+
+
+
+
+
+                                            <td><button wire:click="approveReissue({{ $item->id }})" type="button" class="btn btn-outline-primary btn-sm">Approve</button></td>
+
+                                            <td><button wire:click="rejectReissue({{ $item->id }})" type="button" class="btn btn-outline-danger btn-sm">Cancel</button></td>
+
 
 
                                         </tr>
@@ -77,11 +100,11 @@
                                         @else
 
                                         <figure class="text-center m-6">
-                                            <h3 class="mt-4">No Data is Available Here...</h3>
+                                            <h3 class="mt-6">No Data is Available Here...</h3>
                                         </figure>
-                                         
 
-                                    @endif
+
+                                        @endif
 
 
                                     </tbody>

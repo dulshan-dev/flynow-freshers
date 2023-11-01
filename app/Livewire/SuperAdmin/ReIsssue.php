@@ -14,12 +14,25 @@ use App\Models\ReIssue;
 class ReIsssue extends Component
 {
     public $data;
+    public $status = 'checking';
+    public $reissues;
+
+    
 
     public function render()
     {
-
         $this->data = ReIssue::all();
 
         return view('livewire.super-admin.re-isssue');
+    }
+
+    public function approveReissue($id)
+    {
+        ReIssue::where('id', $id)->update(['status' => 'approved']);
+    }
+
+    public function rejectReissue($id)
+    {
+        ReIssue::where('id', $id)->update(['status' => 'rejected']);
     }
 }

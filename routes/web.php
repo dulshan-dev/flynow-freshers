@@ -43,6 +43,7 @@ use App\Livewire\SuperAdmin\OfflineReqPayment;
 use App\Livewire\SuperAdmin\PrivateFareAccountCode;
 use App\Http\Controllers\Auth\UserVerificationController;
 use App\Livewire\SuperAdmin\ReIsssue;
+use App\Livewire\SuperAdmin\UploadPackages;
 
 /*
 |--------------------------------------------------------------------------
@@ -121,6 +122,10 @@ Route::middleware([
 
     //Queues
     Route::get('/queues', Queues::class)->name('manage.queues');
+
+    //uPLOAD pACKAGES
+    Route::get('/upload-packages', UploadPackages::class)->name('upload-packages');
+
 });
 
 /*

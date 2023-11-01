@@ -24,7 +24,8 @@ class ReIssueSeeder extends Seeder
             'admin_email' => 'admin1@travelport.lk',
             'remarks' => 'Remarks New',
             'no_show' => '1',
-            'purged_pnr' => '0'
+            'purged_pnr' => '0',
+            'status' => 'checking'
         ]);
 
         ReIssue::create([
@@ -38,7 +39,8 @@ class ReIssueSeeder extends Seeder
             'admin_email' => 'admin1@travelport.lk',
             'remarks' => 'Remarks New',
             'no_show' => '0',
-            'purged_pnr' => '1'
+            'purged_pnr' => '1',
+            'status' => 'checking'
         ]);
     }
 }

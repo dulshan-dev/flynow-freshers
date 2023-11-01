@@ -22,6 +22,7 @@ class ReIssue extends Model
         'remarks',
         'no_show',
         'purged_pnr',
+        'status'
     ];
 
     protected $casts = [

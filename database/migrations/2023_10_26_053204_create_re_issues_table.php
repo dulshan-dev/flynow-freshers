@@ -24,6 +24,7 @@ return new class extends Migration
             $table->text('remarks')->nullable();
             $table->boolean('no_show');
             $table->boolean('purged_pnr');
+            $table->string('status');
             $table->timestamps();
         });
     }
