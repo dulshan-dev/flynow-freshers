@@ -20,14 +20,6 @@ class ManageSubAgent extends Component
       
     }
 
-    public function deleteUser($userId)
-    {
-        $user = User::find($userId);
-        
-        if ($user) {
-            $user->delete();
-        }
-    }
 
     public function render()
     {
