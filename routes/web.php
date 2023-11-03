@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Livewire\SubAgent\Announcements;
 use App\Livewire\SubAgent\Home;
 use App\Livewire\SubAgent\ADM;
 use App\Livewire\SubAgent\Profile;
@@ -167,6 +168,8 @@ Route::middleware([
         Route::get('/topup-request', TopupRequest::class)->name('topupRequests');
         Route::get('/profile', Profile::class)->name('profile');
         Route::get('/a-d-m', ADM::class)->name('a-d-m');
+        Route::get('/announcements', Announcements::class)->name('announcements');
+
 
 
     });

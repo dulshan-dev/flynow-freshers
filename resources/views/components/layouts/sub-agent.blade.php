@@ -857,6 +857,13 @@
                         </a>
                     </li>
 
+                    <li><a href="{{ route('sub-agent.announcements')}}" aria-expanded="false">
+                        <i class="bi bi-receipt"></i>
+                        <span class="nav-text">Announcement</span>
+                    </a>
+                  </li>
+
+
                     <li><a href="javascript:void()" aria-expanded="false">
                             <i class="bi bi-clipboard"></i>
                             <span class="nav-text">Fees</span>

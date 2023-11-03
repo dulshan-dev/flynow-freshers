@@ -11,8 +11,27 @@ use Livewire\Attributes\Title;
 
 class GetQuoteOrInsurance extends Component
 {
+    public $CountryofResidency;
+    public $Destination;
+    public $TravelDates;
+    public $Travellers;
+    
+    protected $rules = [
+        'CountryofResidency' => 'required',
+        'Destination' => 'required',
+        'TravelDates' => 'required',
+        'Travellers' => 'required',
+    ];
+
     public function render()
     {
         return view('livewire.sub-agent.get-quote-or-insurance');
+    }
+
+    public function submitForm()
+    {
+        $this->validate();
+
+        // Your form submission logic here
     }
 }
