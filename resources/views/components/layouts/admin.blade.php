@@ -14,10 +14,12 @@
     {{-- <meta property="og:image" content="https://flynow.lk/images/social-image.png" /> --}}
     <meta name="format-detection" content="telephone=no">
 
+
     <title>{{ $title ?? 'Page Title' }}</title>
 
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('front/assets/img/favicon.png') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
     {{-- <link rel="shortcut icon" type="image/png" href="/assets/images/favicon.png" /> --}}
 
     <!-- Style css -->
@@ -830,6 +832,10 @@
                             <i class="bi bi-box-seam"></i>
                             <span class="nav-text">Packages</span>
                         </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('upload-packages') }}">Upload Packages</a></li>
+                            <li><a href="{{ route('upload-bank-details') }}">Upload Bank Details</a></li>
+                        </ul>
                     </li>
 
                     <li><a href="{{ route('manage.queues') }}" aria-expanded="false">
@@ -918,8 +924,12 @@
         Scripts
     ***********************************-->
 
+
+
     <!-- Custom Scripts -->
     @yield('customScripts')
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <!-- Required vendors -->
     <script src="{{ asset('assets/vendor/global/global.min.js') }}"></script>
@@ -986,6 +996,28 @@
             }, 1000);
         });
     </script>
+
+    <script>
+        // toasttr alert configurations
+        toastr.options = {
+            closeButton: false,
+            debug: false,
+            newestOnTop: false,
+            progressBar: true,
+            positionClass: "toast-top-right",
+            preventDuplicates: false,
+            onclick: null,
+            showDuration: "100000",
+            hideDuration: "1000",
+            timeOut: "10000",
+            extendedTimeOut: "1000",
+            showEasing: "swing",
+            hideEasing: "linear",
+            showMethod: "fadeIn",
+            hideMethod: "fadeOut",
+        };
+    </script>
+
     @livewireScripts
 </body>
 

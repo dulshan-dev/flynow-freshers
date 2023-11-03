@@ -41,6 +41,8 @@ use App\Livewire\SuperAdmin\Queues;
 use App\Livewire\SuperAdmin\ServiceTax;
 use App\Livewire\SuperAdmin\TdsMaster;
 use App\Livewire\SuperAdmin\TransactionFee;
+use App\Livewire\SuperAdmin\UploadBankDetails;
+use App\Livewire\SuperAdmin\UploadPackages;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,6 +86,8 @@ Route::middleware([
     Route::get('/manage-admin', ManageAdmin::class)->name('manage.admin')->middleware('auth:admin');
     Route::get('/admin/logout', [AdminController::class, 'destroy'])->name('admin.logout');
     Route::get('/admin-profile', AdminProfile::class)->name('admin.profile')->middleware('auth:admin');
+    Route::get('/upload-packages', UploadPackages::class)->name('upload-packages');
+    Route::get('/upload-bank-details', UploadBankDetails::class)->name('upload-bank-details');
 
     Route::get('/manage-sub-agent', ManageSubAgent::class)->middleware('auth:admin');
     Route::get('/manage-user', ManageUser::class)->middleware('auth:admin');
