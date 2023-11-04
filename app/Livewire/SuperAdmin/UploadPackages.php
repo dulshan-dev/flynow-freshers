@@ -85,8 +85,10 @@ class UploadPackages extends Component
                 $this->UploadURL = null;
                 //$this->PackageName = null;
 
-                $this->reset();
-                $this->successMessage2 = 'Package Uploaded Successfully!!!';
+                return redirect()->route('upload-packages')->with('success', 'Package Uploaded Successfully...');
+
+                //$this->reset();
+                //$this->successMessage2 = 'Package Uploaded Successfully!!!';
                 
         }
 
