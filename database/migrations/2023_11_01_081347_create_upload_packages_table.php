@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('package_name');
             $table->text('description');
             $table->string('title');
-            $table->string('upload_image');
+            $table->string('upload_image')->nullable();
             $table->string('upload_url');
             $table->foreign('admin_id')->references('id')->on('flynow-admin.admins')->onDelete('cascade'); //this is the way how we create foriegn key to identify user
             $table->timestamps();

@@ -30,8 +30,8 @@ class UploadPackages extends Component
     public $AccNumber;
     public $IFSCCode;
     public $Address;
-    public $successMessage = '';
     public $successMessage2 = '';
+    public $errorsMessage = '';
 
     protected $rulesForm1 = [
         'PackageName' => 'required',
@@ -61,7 +61,13 @@ class UploadPackages extends Component
 
         $this->UploadImage = $imageName;
 
-        
+        //dd($this->PackageName, Auth::user()->id, $this->Description, $this->Title, $this->UploadImage, $this->UploadURL);
+
+        if($this->PackageName = null && Auth::user()->id = null && $this->Description = null && $this->Title = null && $this->UploadImage = null && $this->UploadURL = null )
+        {
+            $this->errorsMessage="Your Package not be Added";
+        }else
+        {
             ModelsUploadPackages::create(
                 [
                 'package_name' => $this->PackageName,
@@ -72,24 +78,17 @@ class UploadPackages extends Component
                 'upload_url' => $this->UploadURL]
                 );
 
+                
+                $this->UploadImage = null;
+                $this->Description = null;
+                $this->Title = null;
+                $this->UploadURL = null;
+                //$this->PackageName = null;
 
-
-        
-
-        $this->successMessage2 = 'Package Uploaded Successfully!!!';
-
-        
-
-
-
-        
-        
-         
-
-
-
-        
-        $this->UploadImage = null;
+                $this->reset();
+                $this->successMessage2 = 'Package Uploaded Successfully!!!';
+                
+        }
 
         //return redirect()->route('upload-packages')->with('success', 'Data Added Successfully!!!');
 
