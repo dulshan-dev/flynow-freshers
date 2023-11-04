@@ -865,6 +865,13 @@
                         </a>
                     </li>
 
+                    <!--Announcements-->
+                    <li><a class="has-arrow " href="{{ route('announcement') }}" aria-expanded="false">
+                            <i class="bi bi-diagram-3"></i>
+                            <span class="nav-text">Announcements</span>
+                        </a>
+                    </li>
+
                 </ul>
 
                 <!-- <div class="copyright">
