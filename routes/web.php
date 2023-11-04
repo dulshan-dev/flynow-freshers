@@ -41,6 +41,7 @@ use App\Livewire\SuperAdmin\Queues;
 use App\Livewire\SuperAdmin\ServiceTax;
 use App\Livewire\SuperAdmin\TdsMaster;
 use App\Livewire\SuperAdmin\TransactionFee;
+use App\Livewire\SuperAdmin\Announcement;
 
 /*
 |--------------------------------------------------------------------------
@@ -118,6 +119,9 @@ Route::middleware([
 
     //Queues
     Route::get('/queues', Queues::class)->name('manage.queues');
+
+    //Announcements
+    Route::get('/announcement', Announcement::class)->name('announcement');
 });
 
 /*
