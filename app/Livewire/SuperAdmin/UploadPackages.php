@@ -30,7 +30,6 @@ class UploadPackages extends Component
     public $AccNumber;
     public $IFSCCode;
     public $Address;
-    public $successMessage2 = '';
     public $errorsMessage = '';
 
     protected $rulesForm1 = [
