@@ -830,10 +830,10 @@
 
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
                             <i class="bi bi-box-seam"></i>
-                            <span class="nav-text">Packages</span>
+                            <span class="nav-text">Upload Offers & Bank Detils</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('upload-packages') }}">Upload Packages</a></li>
+                            <li><a href="{{ route('upload-packages') }}">Upload Offers</a></li>
                             <li><a href="{{ route('upload-bank-details') }}">Upload Bank Details</a></li>
                         </ul>
                     </li>

@@ -11,14 +11,14 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 
 #[Layout('components.layouts.admin')]
-#[Title('Upload Packages')]
+#[Title('Upload Offers')]
 
 class UploadPackages extends Component
 {
     use WithFileUploads;
     use WithFileUploads;
 
-    public $PackageName;
+    public $OfferName;
     public $Description;
     public $Title;
     public $UploadImage;
@@ -34,7 +34,7 @@ class UploadPackages extends Component
     public $errorsMessage = '';
 
     protected $rulesForm1 = [
-        'PackageName' => 'required',
+        'OfferName' => 'required',
         'Description' => 'required',
         'Title' => 'required',
         'UploadImage' => 'required|mimes:jpeg,png|max:2048',
@@ -55,7 +55,7 @@ class UploadPackages extends Component
 
         
 
-        $this->validate($this->rulesForm1, [], ['PackageName', 'Description', 'Title', 'UploadImage', 'UploadURL']);
+        $this->validate($this->rulesForm1, [], ['OfferName', 'Description', 'Title', 'UploadImage', 'UploadURL']);
 
         $imageName = $this->UploadImage->store('upload', 'public');
 
@@ -63,14 +63,14 @@ class UploadPackages extends Component
 
         //dd($this->PackageName, Auth::user()->id, $this->Description, $this->Title, $this->UploadImage, $this->UploadURL);
 
-        if($this->PackageName = null && Auth::user()->id = null && $this->Description = null && $this->Title = null && $this->UploadImage = null && $this->UploadURL = null )
+        if($this->OfferName= null || Auth::user()->id = null || $this->Description = null || $this->Title = null || $this->UploadURL = null )
         {
             $this->errorsMessage="Your Package not be Added";
         }else
         {
             ModelsUploadPackages::create(
                 [
-                'package_name' => $this->PackageName,
+                'package_name' => $this->OfferName,
                 'admin_id' => Auth::user()->id,
                 'description' => $this->Description,
                 'title' => $this->Title,
@@ -83,9 +83,9 @@ class UploadPackages extends Component
                 $this->Description = null;
                 $this->Title = null;
                 $this->UploadURL = null;
-                //$this->PackageName = null;
+                $this->OfferName = null;
 
-                return redirect()->route('upload-packages')->with('success', 'Package Uploaded Successfully...');
+                return redirect()->route('upload-packages')->with('success', 'offer Uploaded Successfully...');
 
                 //$this->reset();
                 //$this->successMessage2 = 'Package Uploaded Successfully!!!';

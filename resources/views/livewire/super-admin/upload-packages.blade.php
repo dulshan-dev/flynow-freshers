@@ -4,8 +4,8 @@
             <div class="container-fluid">
                 <div class="row page-titles">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Packages</a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Upload Packages</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Offers</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Upload Offers</a></li>
                     </ol>
                 </div>
                 <div class="row">
@@ -13,7 +13,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Upload Package</h4>
+                                <h4 class="card-title">Upload Offers</h4>
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
@@ -30,22 +30,22 @@
                                         </div>
                                         @endif
                                         <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Package Name</label>
+                                            <label class="col-sm-3 col-form-label">Offer Name</label>
                                             <div class="col-sm-9">
-                                                <select class="form-control wide" wire:model="PackageName">
-                                                    <option value="Default">create new</option>
+                                                <select class="form-control wide" wire:model="OfferName">
+                                                    <option value="Default">Select Your Offer Name</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
                                                     <option value="4">4</option>
                                                 </select>
                                             </div>
-                                            @error('PackageName') <span class="error" style="color: red;">{{ $message }}</span> @enderror
+                                            @error('OfferName') <span class="error" style="color: red;">{{ $message }}</span> @enderror
                                         </div>
 
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Description</label>
                                             <div class="col-sm-9">
-                                                <textarea class="form-control" name="message" id="ckeditor" wire:model="Description" placeholder="Description"></textarea>
+                                                <textarea class="form-control" name="message" id="ckeditor" wire:model="Description" placeholder="Enter Your Description"></textarea>
                                             </div>
                                             @error('Description') <span class="error" style="color: red;">{{ $message }}</span> @enderror
                                         </div>
@@ -53,7 +53,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Title</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" placeholder="text" wire:model="Title">
+                                                <input type="text" class="form-control" placeholder="Enter Your Title" wire:model="Enter Your Title">
                                             </div>
                                             @error('Title') <span class="error" style="color: red;">{{ $message }}</span> @enderror
                                         </div>
@@ -78,7 +78,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Upload URL</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" placeholder="URL" wire:model="UploadURL">
+                                                <input type="text" class="form-control" placeholder="Enter Your URL" wire:model="UploadURL">
 
                                             </div>
                                         </div>
