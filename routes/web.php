@@ -31,12 +31,17 @@ use App\Livewire\SubAgent\GetQuoteOrInsurance;
 use App\Livewire\SubAgent\TransactionOverview;
 use App\Livewire\SuperAdmin\OfflineReqPayment;
 use App\Http\Controllers\Auth\UserVerificationController;
+use App\Livewire\SubAgent\ReissueQuotation;
 use App\Livewire\SuperAdmin\AirlineCommission;
 use App\Livewire\SuperAdmin\AirlinePreference;
 use App\Livewire\SuperAdmin\ClassMaster;
+use App\Livewire\SuperAdmin\CreditLimit;
 use App\Livewire\SuperAdmin\CustomRuleCheck;
 use App\Livewire\SuperAdmin\DealCodeMaster;
+use App\Livewire\SuperAdmin\GDSCredentials;
+use App\Livewire\SuperAdmin\GDSDefaultConfiguration;
 use App\Livewire\SuperAdmin\GoodServiceTax;
+use App\Livewire\SuperAdmin\MarkupTransactionFeeReport;
 use App\Livewire\SuperAdmin\ModifyPNR;
 use App\Livewire\SuperAdmin\OfflinePayment;
 use App\Livewire\SuperAdmin\PrivateFareAccountCode;
@@ -102,6 +107,9 @@ Route::middleware([
     Route::get('/agent-incentive', AgentIncentive::class)->name('agent.incentive')->middleware('auth:admin');
     Route::get('/markup-fee', MarkUpFee::class)->name('mark.up.fee')->middleware('auth:admin');
 
+    //company configuration
+    Route::get('/g-d-s-default-configuration', GDSDefaultConfiguration::class)->name('g-d-s-default-configuration')->middleware('auth:admin');
+    
     //offline requests
     Route::get('admin/offline-requests/payment', OfflineReqPayment::class)->name('offline.payment')->middleware('auth:admin');
     Route::get('admin/offline-requests/void', OfflineReqVoid::class)->name('offline.void')->middleware('auth:admin');
@@ -123,11 +131,22 @@ Route::middleware([
     //Modify PNR
     Route::get('/modify-pnr', ModifyPNR::class)->name('manage.modify-pnr');
 
-    //Queues
-    Route::get('/queues', Queues::class)->name('manage.queues');
+     //Modify PNR
+     Route::get('/modify-pnr', ModifyPNR::class)->name('manage.modify-pnr');
+
+    //report
+   Route::get('/markup-transaction-fee-report', MarkupTransactionFeeReport::class)->name('markup-transaction-fee-report');
 
     //UploadPackges
     Route::get('/upload-packages', UploadPackages::class)->name('upload-packages');
+
+     //queues
+     Route::get('/queues', Queues::class)->name('manage.queues');
+
+      //agency network
+      Route::get('/g-d-s-credentials', GDSCredentials::class)->name('g-d-s-credentials');
+      Route::get('/credit-limit', CreditLimit::class)->name('credit-limit');
+
 
 });
 
@@ -169,6 +188,8 @@ Route::middleware([
         Route::get('/profile', Profile::class)->name('profile');
         Route::get('/a-d-m', ADM::class)->name('a-d-m');
         Route::get('/announcements', Announcements::class)->name('announcements');
+        Route::get('/reissue-quotation', ReissueQuotation::class)->name('reissue-quotation');
+
 
 
 

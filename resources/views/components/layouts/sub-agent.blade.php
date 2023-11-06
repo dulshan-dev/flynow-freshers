@@ -53,14 +53,14 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="/admin" class="brand-logo">
+            <a href="/admin" class="">
 
-                <img class="logo-abbr" src="{{ asset('assets/images/flynow-icon-small.png') }}" alt="">
                 <div class="brand-title">
-                    <h2 style="color: #29B2EF; font-weight:bold; " class="">Flynow</h2>
-                    <!-- <span class="brand-sub-title">Admin Dashboard</span> -->
+                <img class="" src="{{ asset('assets/images/flynow_powered_by_ttp.png') }}" alt="" style="width: 240px; height: 80px;"  >
                 </div>
+                    <!-- <span class="brand-sub-title">Admin Dashboard</span> -->   
             </a>
+            
             <div class="nav-control">
                 <div class="hamburger">
                     <span class="line"></span><span class="line"></span><span class="line"></span>
@@ -860,9 +860,15 @@
                     <li><a href="{{ route('sub-agent.announcements')}}" aria-expanded="false">
                         <i class="bi bi-receipt"></i>
                         <span class="nav-text">Announcement</span>
-                    </a>
-                  </li>
-
+                        </a>
+                    </li>
+                    
+                    <li><a href="{{ route('sub-agent.reissue-quotation')}}" aria-expanded="false">
+                        <i class="bi bi-receipt"></i>
+                        <span class="nav-text">Reissue Quotaion</span>
+                        </a>
+                    </li>
+                    
 
                     <li><a href="javascript:void()" aria-expanded="false">
                             <i class="bi bi-clipboard"></i>

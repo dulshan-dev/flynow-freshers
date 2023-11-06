@@ -49,13 +49,11 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="{{ route('admin.dashboard') }}" class="brand-logo">
+            <a href="{{ route('admin.dashboard') }}" class="">
 
-                <img class="logo-abbr" src="{{ asset('assets/images/flynow-icon-small.png') }}" alt="">
                 <div class="brand-title">
-                    <h2 style="color: #29B2EF; font-weight:bold; " class="">Flynow</h2>
-                    <!-- <span class="brand-sub-title">Powerd by The Travel Port</span> -->
-                </div>
+                    <img class="" src="{{ asset('assets/images/flynow_powered_by_ttp.png') }}" alt="" style="width: 240px; height: 80px;"  >
+                    </div>
             </a>
             <div class="nav-control">
                 <div class="hamburger">
@@ -803,8 +801,11 @@
 
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
                             <i class="bi bi-building-gear"></i>
-                            <span class="nav-text">Configuration</span>
+                            <span class="nav-text">Company Configuration</span>
                         </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('g-d-s-default-configuration') }}">GDS Default Configuration</a></li>
+                        </ul>
                     </li>
 
                     <li><a href="{{ route('manage.modify-pnr') }}" aria-expanded="false">
@@ -849,12 +850,14 @@
                             <span class="nav-text">Transactions</span>
                         </a>
                     </li>
+
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
                             <i class="bi bi-file-earmark-text"></i>
                             <span class="nav-text">Report</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('manage.topup') }}">Top Up</a></li>
+                            <li><a href="{{ route('markup-transaction-fee-report') }}">Markup Transaction Fee</a></li>
                         </ul>
                     </li>
 
@@ -868,6 +871,10 @@
                             <i class="bi bi-diagram-3"></i>
                             <span class="nav-text">Sub Agency Network</span>
                         </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('g-d-s-credentials') }}">GDS Credentials</a></li>
+                            <li><a href="{{ route('credit-limit')}} ">Credit Limit</a></li>
+                        </ul>
                     </li>
 
                 </ul>

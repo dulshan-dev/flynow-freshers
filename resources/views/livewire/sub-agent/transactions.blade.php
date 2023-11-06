@@ -3,6 +3,13 @@
         <!-- row -->
         <div class="container-fluid">
 
+            <div class="row page-titles">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Transaction Reports</a></li>
+                    
+                </ol>
+            </div>
+
             <!-- ----------------------------------------------Form------------------------ -->
             <div class="card">
                 <div class="card-body">

@@ -3,9 +3,11 @@
         <!-- row -->
         <div class="container-fluid">
 
-            <!-- <div class="row page-titles fw-semibold fs-4">
-                Statements
-            </div> -->
+            <div class="row page-titles">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Statments</a></li>    
+                </ol>
+            </div>
 
             <!-- ----------------------------------------------Form------------------------ -->
             <div class="card">
@@ -14,11 +16,13 @@
                         <div class="col-12">
                             <form>
                                 <div class="row">
+                                 <!--text area-->
                                     <div class="mb-3 col-md-4">
                                         <label class="form-label">Select Date</label>
                                         <input name="datepicker" class="datepicker-default form-control" id="datepicker" value="YYYY-MM-DD">
                                     </div>
 
+                                <!--select list-->
                                     <div class="mb-3 col-md-4">
                                         <label class="form-label">Select Account / Type</label>
                                         <select class="default-select form-control wide mb-3">
@@ -29,6 +33,7 @@
                                         </select>
                                     </div>
 
+                                <!--button-->
                                     <div class="d-flex align-items-center col-md-4">
                                         <button type="submit" class="btn btn-primary">View Transactions</button>
                                     </div>
