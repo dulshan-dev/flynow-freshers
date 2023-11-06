@@ -53,7 +53,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Title</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" placeholder="Enter Your Title" wire:model="Enter Your Title">
+                                                <input type="text" class="form-control" placeholder="Enter Your Title" wire:model="Title">
                                             </div>
                                             @error('Title') <span class="error" style="color: red;">{{ $message }}</span> @enderror
                                         </div>

@@ -62,12 +62,7 @@ class UploadPackages extends Component
         $this->UploadImage = $imageName;
 
         //dd($this->PackageName, Auth::user()->id, $this->Description, $this->Title, $this->UploadImage, $this->UploadURL);
-
-        if($this->OfferName= null || Auth::user()->id = null || $this->Description = null || $this->Title = null || $this->UploadURL = null )
-        {
-            $this->errorsMessage="Your Package not be Added";
-        }else
-        {
+        
             ModelsUploadPackages::create(
                 [
                 'package_name' => $this->OfferName,
@@ -75,14 +70,14 @@ class UploadPackages extends Component
                 'description' => $this->Description,
                 'title' => $this->Title,
                 'upload_image' => $this->UploadImage,
-                'upload_url' => $this->UploadURL]
-                );
+                'upload_url' => $this->UploadURL
+                ]);
 
                 
                 $this->UploadImage = null;
                 $this->Description = null;
                 $this->Title = null;
-                $this->UploadURL = null;
+                //$this->UploadURL = null;
                 $this->OfferName = null;
 
                 return redirect()->route('upload-packages')->with('success', 'offer Uploaded Successfully...');
@@ -90,7 +85,7 @@ class UploadPackages extends Component
                 //$this->reset();
                 //$this->successMessage2 = 'Package Uploaded Successfully!!!';
                 
-        }
+        
 
         //return redirect()->route('upload-packages')->with('success', 'Data Added Successfully!!!');
 
