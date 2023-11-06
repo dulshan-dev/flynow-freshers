@@ -30,5 +30,21 @@ class AdminSeeder extends Seeder
             'profile_photo_path' => null,
             'current_team_id' => null,
         ]);
+
+        Admin::create([
+            'name' => 'Admin',
+            'email' => 'admin2@flynow.lk',
+            'role' => 'admin',
+            'email_verified_at' => now(),
+            'created_at' => now(),
+            'updated_at' => now(),
+            'password' => bcrypt('password'),
+            // password
+            // 'two_factor_secret' => null,
+            // 'two_factor_recovery_codes' => null,
+            'remember_token' => Str::random(10),
+            'profile_photo_path' => null,
+            'current_team_id' => null,
+        ]);
     }
 }
