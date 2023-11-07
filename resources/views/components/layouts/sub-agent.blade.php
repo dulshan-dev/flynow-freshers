@@ -23,8 +23,10 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('front/assets/img/favicon.png') }}">
     {{-- <link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/favicon.png') }}"> --}}
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="./vendor/dropzone/dist/dropzone.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
 
-    <!-- Style css -->
+    <!-- Style css -->y
     @vite('resources/js/app.js')
     @livewireStyles
 
@@ -806,6 +808,7 @@
                         <ul aria-expanded="false">
                             <li><a href="{{ route('sub-agent.reissue') }}">Re-Issue Reqvest</a></li>
                             <li><a href="{{ route('sub-agent.refund') }}">Re-Fund Reqvest</a></li>
+                            <li><a href="{{ route('sub-agent.tiketre') }}">Ticket Reissu</a></li>
                         </ul>
                     </li>
 
@@ -974,6 +977,10 @@
     <!-- Light gallery -->
     <script src="{{ asset('assets/vendor/lightgallery/js/lightgallery-all.min.js') }}"></script>
 
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    
+
     <!-- ----------------------------------------------------------------- -->
 
     <script>
@@ -1020,7 +1027,40 @@
                 cardsCenter();
             }, 1000);
         });
+
+
     </script>
+    <script>
+        // toasttr alert configurations
+        toastr.options = {
+            closeButton: false,
+            debug: false,
+            newestOnTop: false,
+            progressBar: true,
+            positionClass: "toast-top-right",
+            preventDuplicates: false,
+            onclick: null,
+            showDuration: "100000",
+            hideDuration: "1000",
+            timeOut: "10000",
+            extendedTimeOut: "1000",
+            showEasing: "swing",
+            hideEasing: "linear",
+            showMethod: "fadeIn",
+            hideMethod: "fadeOut",
+        };
+    </script>
+     @if (session()->has('success'))
+     <script>
+         toastr.success('{{ session('success') }}');
+     </script>
+    @endif
+
+    @if (session()->has('failed'))
+        <script>
+            toastr.error('{{ session('failed') }}');
+        </script>
+    @endif
     @livewireScripts
 </body>
 

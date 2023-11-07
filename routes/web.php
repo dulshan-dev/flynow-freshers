@@ -12,6 +12,7 @@ use App\Livewire\SuperAdmin\ModifyPNR;
 use App\Livewire\SuperAdmin\TdsMaster;
 use App\Livewire\Auth\UserVerification;
 use App\Livewire\SubAgent\FlightSearch;
+use App\Livewire\SubAgent\TiketReissue;
 use App\Livewire\SubAgent\TopupRequest;
 use App\Livewire\SubAgent\Transactions;
 use App\Livewire\SuperAdmin\ManageUser;
@@ -162,6 +163,7 @@ Route::middleware([
         //offline request
         Route::get('/reissue', ReissueReqvest::class)->name('reissue');
         Route::get('/refund', RefundReqvest::class)->name('refund');
+        Route::get('/tiketreissu', TiketReissue::class)->name('tiketre');
 
     });
 
